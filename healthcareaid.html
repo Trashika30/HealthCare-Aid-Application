@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Aid Application</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ECF0F1;
+            color: #34495E;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #2C3E50;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            animation: logo-bounce 2s infinite;
+        }
+
+        @keyframes logo-bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            position: relative;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -3px;
+            left: 0;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        .hero-section {
+        height: 100vh;
+        background: linear-gradient(135deg, #11998e, #38ef7d); /* Teal to Mint Green */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        animation: fadeIn 2s ease-out;
+    }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: text-flicker 3s infinite;
+        }
+
+        @keyframes text-flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            animation: slide-in 2s ease-out;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .cta-btn {
+            padding: 15px 30px;
+            background-color: #E74C3C;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.1);
+            background-color: #C0392B;
+        }
+
+        .services-section {
+            padding: 60px;
+            background-color: #ECF0F1;
+            text-align: center;
+            animation: bounce-in 1s ease-out;
+        }
+
+        @keyframes bounce-in {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .services-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #2C3E50;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .service-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            width: 30%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #2C3E50;
+        }
+
+        footer {
+        padding: 10px 20px;
+        background-color: #2C3E50;
+        color: white;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+
+    footer p {
+        font-size: 0.9em;
+        margin: 0;
+    }
+        @keyframes footer-appear {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Healthcare Aid</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">What We Offer</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Empowering Patients, Simplifying Healthcare</h1>
+            <p>Your go-to solution for disease detection and insurance cost prediction.</p>
+            <a href="learnmore.html" class="cta-btn">Learn More</a>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2>What We Offer</h2>
+        <div class="services-container">
+            <div class="service-box">
+                <h3>Symptom-based Disease Prediction</h3>
+                <p>Enter symptoms like "fever," "cough," or "fatigue" to receive predictions of potential conditions using our machine learning model.</p>
+            </div>
+            <div class="service-box">
+                <h3>Insurance Co-pay and Premium Calculation</h3>
+                <p>Estimate your insurance premium or co-pay by entering health data such as BMI, smoker status, and region, helping you make informed decisions.</p>
+            </div>
+            <div class="service-box">
+                <h3>Health Awareness and Early Detection</h3>
+                <p>Our app raises health awareness by providing real-time predictions, helping you seek medical advice sooner.</p>
+            </div>
+        </div>
+
+       
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Healthcare Aid. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

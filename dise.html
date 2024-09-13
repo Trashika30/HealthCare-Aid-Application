@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b4d4f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2e8b57;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h6 {
+            text-align: center;
+            color: #4682b4;
+        }
+        .form-section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .form-section h2 {
+            color: #2e8b57;
+            margin-top: 0;
+            text-align: center;
+        }
+        .form-group {
+            overflow: hidden;
+        }
+        .symptom-group {
+            float: left;
+            width: 48%;
+            margin: 1%;
+        }
+        .form-group label {
+            color: #4682b4;
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .submit-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .submit {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit:hover {
+            background-color: #3e8e41;
+        }
+        .prediction {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            color: #d9534f;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .symptom-group {
+                width: 100%;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Disease Prediction</h1>
+        <h6>42 Diseases can be predicted</h6>
+
+        <form action="/submit-form" method="post">
+            <div class="form-section">
+                <h2>Symptoms</h2>
+                <div class="form-group">
+                    <div class="symptom-group">
+                        <label for="diarrhoea">Diarrhoea:</label>
+                        <select name="diarrhoea" id="diarrhoea">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="irritability">Irritability:</label>
+                        <select name="irritability" id="irritability">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="dark_urine">Dark Urine:</label>
+                        <select name="dark_urine" id="dark_urine">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="cough">Cough:</label>
+                        <select name="cough" id="cough">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="sweating">Sweating:</label>
+                        <select name="sweating" id="sweating">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="itching">Itching:</label>
+                        <select name="itching" id="itching">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="joint_pain">Joint Pain:</label>
+                        <select name="joint_pain" id="joint_pain">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="chest_pain">Chest Pain:</label>
+                        <select name="chest_pain" id="chest_pain">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="malaise">Malaise:</label>
+                        <select name="malaise" id="malaise">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="chills">Chills:</label>
+                        <select name="chills" id="chills">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                    <div class="symptom-group">
+                        <label for="skin_rash">Skin Rash:</label>
+                        <select name="skin_rash" id="skin_rash">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="yellowing_of_eyes">Yellowing of Eyes:</label>
+                        <select name="yellowing_of_eyes" id="yellowing_of_eyes">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="yellowish_skin">Yellowish Skin:</label>
+                        <select name="yellowish_skin" id="yellowish_skin">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="loss_of_appetite">Loss of Appetite:</label>
+                        <select name="loss_of_appetite" id="loss_of_appetite">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="abdominal_pain">Abdominal Pain:</label>
+                        <select name="abdominal_pain" id="abdominal_pain">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="headache">Headache:</label>
+                        <select name="headache" id="headache">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="nausea">Nausea:</label>
+                        <select name="nausea" id="nausea">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="high_fever">High Fever:</label>
+                        <select name="high_fever" id="high_fever">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="vomiting">Vomiting:</label>
+                        <select name="vomiting" id="vomiting">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                        <label for="fatigue">Fatigue:</label>
+                        <select name="fatigue" id="fatigue">
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit-container">
+                <input type="submit" class="submit" value="Check Disease">
+            </div>
+        </form>
+
+        {% if prediction %}
+        <div class="prediction">
+            <h2>Predicted Disease:</h2>
+            <p>As per the symptoms you may have '{{ prediction }}'. Please consult a doctor for further verification and treatment.</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

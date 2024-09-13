@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn More - Healthcare Aid</title>
+    <style>
+        /* Include the same styles as in homepage */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ECF0F1;
+            color: #34495E;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #2C3E50;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            animation: logo-bounce 2s infinite;
+        }
+
+        @keyframes logo-bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            position: relative;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -3px;
+            left: 0;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(135deg, #FF6F61, #F8B195); /* Coral to Soft Pink */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: text-flicker 3s infinite;
+        }
+
+        @keyframes text-flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            animation: slide-in 2s ease-out;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .cta-btn {
+            padding: 15px 30px;
+            background-color: #E74C3C;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.1);
+            background-color: #C0392B;
+        }
+
+        .options-section {
+            padding: 60px;
+            background-color: #ECF0F1;
+            text-align: center;
+            animation: bounce-in 1s ease-out;
+        }
+
+        @keyframes bounce-in {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .options-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #2C3E50;
+        }
+
+        .options-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .option-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            width: 250px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .option-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .option-box a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #E74C3C;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .option-box a:hover {
+            background-color: #C0392B;
+        }
+
+        footer {
+            padding: 10px 20px;
+            background-color: #2C3E50;
+            color: white;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            font-size: 0.9em;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Healthcare Aid</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="learnmore.html">What We Offer</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="options-section">
+        <h2>Choose an Option</h2>
+        <div class="options-container">
+            <div class="option-box">
+                <h3>Disease Prediction</h3>
+                <p>Analyze your symptoms to get potential disease predictions.</p>
+                <a href="diseaseprediction.html">Predict Disease</a>
+            </div>
+            <div class="option-box">
+                <h3>Insurance Co-pay</h3>
+                <p>Calculate your insurance co-pay based on your health parameters.</p>
+                <a href="insurancecopay.html">Calculate Co-pay</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Healthcare Aid. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
