@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #11998e, #38ef7d); /* Teal to Mint Green */
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #34495E;
+      padding-top: 80px; /* Space for header */
+    }
+
+    header {
+      background-color: #2C3E50;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      animation: logo-bounce 2s infinite;
+    }
+
+    @keyframes logo-bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+            position: relative;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -3px;
+            left: 0;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 360px;
+    }
+
+    .container h2 {
+      margin-bottom: 20px;
+      color: #333333;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .forgot-password {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .forgot-password a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      background-color: #d8280a;
+      color: #ffffff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #002060;
+    }
+
+    .signup {
+      margin-top: 20px;
+    }
+
+    .signup a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .signup a:hover {
+      text-decoration: underline;
+    }
+
+    .or {
+      margin: 20px 0;
+      color: #888888;
+    }
+
+    .google-btn {
+      background-color: #ffffff;
+      color: #333333;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .google-btn i {
+      margin-right: 10px;
+    }
+
+    .terms {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #888888;
+    }
+
+    .terms a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .terms a:hover {
+      text-decoration: underline;
+    }
+
+   
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Healthcare Aid</div>
+    <nav>
+      <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('SignUp') }}">SignUp</a></li>
+      <li><a href="{{ url_for('learnmore') }}">Services</a></li>
+      <li><a href="#contact">About Us</a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Welcome back!</h2>
+    <div class="input-group">
+      <i class="fas fa-envelope"></i>
+      <input placeholder="Enter your email" type="email" />
+    </div>
+    <div class="input-group">
+      <i class="fas fa-lock"></i>
+      <input placeholder="Enter your password" type="password" />
+    </div>
+    <div class="forgot-password">
+      <a href="#">Forgot password?</a>
+    </div>
+    <button class="btn"><a href="{{ url_for('learnmore') }}" style="text-decoration: none;color: #ffffff;">Sign in</a></button>
+    <div class="signup">Don't have an account? <a href="{{ url_for('SignUp') }}">Sign up</a></div>
+    <div class="or">OR</div>
+    <button class="google-btn"><i class="fab fa-google"></i> Continue with Google</button>
+    <div class="terms">
+      By signing in you agree to the <a href="#">Terms of Use</a>, <a href="#">Privacy Policy</a> and <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

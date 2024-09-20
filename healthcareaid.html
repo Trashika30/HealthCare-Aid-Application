@@ -227,9 +227,9 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">What We Offer</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="{{ url_for('Login') }}">Login</a></li>
+                <li><a href="{{ url_for('SignUp') }}">SignUp</a></li>
+                <li><a href="{{ url_for('learnmore') }}">Services</a></li>
             </ul>
         </nav>
     </header>
@@ -238,7 +238,7 @@
         <div class="hero-content">
             <h1>Empowering Patients, Simplifying Healthcare</h1>
             <p>Your go-to solution for disease detection and insurance cost prediction.</p>
-            <a href="learnmore.html" class="cta-btn">Learn More</a>
+            <a href="{{ url_for('learnmore') }}" class="cta-btn">Learn More</a>  
         </div>
     </section>
 
@@ -262,9 +262,7 @@
        
     </section>
 
-    <footer>
-        <p>&copy; 2024 Healthcare Aid. All Rights Reserved.</p>
-    </footer>
+    
 
 </body>
 </html>

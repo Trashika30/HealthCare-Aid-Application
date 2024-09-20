@@ -150,18 +150,6 @@
             padding: 60px;
             background-color: #ECF0F1;
             text-align: center;
-            animation: bounce-in 1s ease-out;
-        }
-
-        @keyframes bounce-in {
-            from {
-                transform: scale(0.9);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
         }
 
         .options-section h2 {
@@ -172,9 +160,16 @@
 
         .options-container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .options-row {
+            display: flex;
             gap: 30px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .option-box {
@@ -230,10 +225,10 @@
         <div class="logo">Healthcare Aid</div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="learnmore.html">What We Offer</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('Login') }}">Login</a></li>
+                <li><a href="{{ url_for('SignUp') }}">SignUp</a></li>
+                <li><a href="{{ url_for('learnmore') }}">Services</a></li>
             </ul>
         </nav>
     </header>
@@ -241,15 +236,34 @@
     <section class="options-section">
         <h2>Choose an Option</h2>
         <div class="options-container">
-            <div class="option-box">
-                <h3>Disease Prediction</h3>
-                <p>Analyze your symptoms to get potential disease predictions.</p>
-                <a href="diseaseprediction.html">Predict Disease</a>
+            <div class="options-row">
+                <div class="option-box">
+                    <h3>Disease Prediction</h3>
+                    <p>Analyze your symptoms to get potential disease predictions.</p>
+                    <a href="{{ url_for('predict_disease') }}" class='cta-btn'> Predict Disease </a>
+                </div>
+                <div class="option-box">
+                    <h3>Insurance Co-pay</h3>
+                    <p>Calculate your insurance co-pay based on your health parameters.</p>
+                    <a href="{{ url_for('index') }}" class='cta-btn'>Insurance</a>
+                </div>
+                <div class="option-box">
+                    <h3>Book Doctor Appointment</h3>
+                    <p>Schedule your appointment with a healthcare provider easily.</p>
+                    <a href="{{ url_for('doc') }}" class='cta-btn'>Book Appointment</a>
+                </div>
             </div>
-            <div class="option-box">
-                <h3>Insurance Co-pay</h3>
-                <p>Calculate your insurance co-pay based on your health parameters.</p>
-                <a href="insurancecopay.html">Calculate Co-pay</a>
+            <div class="options-row">
+                <div class="option-box">
+                    <h3>Popular Insurance Policies</h3>
+                    <p>Explore and compare popular health insurance policies available.</p>
+                    <a href="{{ url_for('insu') }}" class='cta-btn'>View Policies</a>
+                </div>
+                <div class="option-box">
+                    <h3>Health Insurance Checklist</h3>
+                    <p>Use this checklist to make sure your health insurance meets your needs.</p>
+                    <a href="{{ url_for('checklist') }}" class='cta-btn'>Check List</a>
+                </div>
             </div>
         </div>
     </section>
